@@ -1,0 +1,16 @@
+{
+  "name": "css_style_guide",
+  "version": "1.0.0",
+  "description": "CSS standard style guide for Aguilar - Construcciones y reformas project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mauro Aguilar Bustamante",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.2"
+  }
+}

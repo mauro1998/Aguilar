@@ -1,0 +1,91 @@
+/**
+
+  @site-header
+--------------------------------------------------------
+  modules/_site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+
+.site_header {
+  border-bottom: 1px solid $color__grey--light;
+  box-shadow: -3px 3px 15px #e0e0e0;
+
+  &.simple{
+    padding: 1*$unit 0;
+  }
+
+  > .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+
+.branding {
+  text-decoration: none;
+  display: flex;
+}
+
+.branding_logo {
+  height: 3*$unit;
+  width: 3*$unit;
+  margin-right: 1*$unit;
+  padding: .3*$unit;
+}
+
+.branding_wordmark {
+  font-size: 1.5*$unit;
+  white-space: nowrap;
+  line-height: 2*$unit;
+  margin: 0;
+}
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+
+.site_nav {
+  display: flex;
+  flex-grow: 1;
+
+  a.simple {
+    height: 2*$unit;
+    line-height: 2*$unit;
+    padding: 0 .5em;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  a.wide {
+    padding: .8em 1em;
+    text-decoration: none;
+  }
+
+}

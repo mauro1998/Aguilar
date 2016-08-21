@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'Avenir LT Std 95 Black';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 95 Black'), url('../fonts/AvenirLTStd-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 45 Book';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 45 Book'), url('../fonts/AvenirLTStd-Book.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 85 Heavy';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 85 Heavy'), url('../fonts/AvenirLTStd-Heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 35 Light';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 35 Light'), url('../fonts/AvenirLTStd-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 65 Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 65 Medium'), url('../fonts/AvenirLTStd-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 55 Roman';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 55 Roman'), url('../fonts/AvenirLTStd-Roman.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 95 Black Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 95 Black Oblique'), url('../fonts/AvenirLTStd-BlackOblique.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 45 Book Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 45 Book Oblique'), url('../fonts/AvenirLTStd-BookOblique.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 85 Heavy Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 85 Heavy Oblique'), url('../fonts/AvenirLTStd-HeavyOblique.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 35 Light Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 35 Light Oblique'), url('../fonts/AvenirLTStd-LightOblique.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 65 Medium Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 65 Medium Oblique'), url('../fonts/AvenirLTStd-MediumOblique.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Avenir LT Std 55 Oblique';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Avenir LT Std 55 Oblique'), url('../fonts/AvenirLTStd-Oblique.woff') format('woff');
+}
+
+/* @avenir
+--------------------------------------------------------
+
+Avenir font.
+
+Usage:
+p {
+  @extend %avenir-light
+}
+
+----------------------------------------------------- */
+
+%avenir-black { font-family: 'Avenir LT Std 95 Black'; }
+%avenir-book { font-family: 'Avenir LT Std 45 Book'; }
+%avenir-heavy { font-family: 'Avenir LT Std 85 Heavy'; }
+%avenir-light { font-family: 'Avenir LT Std 35 Light'; }
+%avenir-medium { font-family: 'Avenir LT Std 65 Medium'; }
+%avenir-roman { font-family: 'Avenir LT Std 55 Roman'; }
+%avenir-black-o { font-family: 'Avenir LT Std 95 Black Oblique'; }
+%avenir-book-o { font-family: 'Avenir LT Std 45 Book Oblique'; }
+%avenir-heavy-o { font-family: 'Avenir LT Std 85 Heavy Oblique'; }
+%avenir-light-o { font-family: 'Avenir LT Std 35 Light Oblique'; }
+%avenir-medium-o { font-family: 'Avenir LT Std 65 Medium Oblique'; }
+%avenir-o { font-family: 'Avenir LT Std 55 Oblique'; }
+
+/* @sans
+--------------------------------------------------------
+
+This is your basic sans font.
+
+Usage: use sans regular on a p
+p {
+@extend %sans--regular;
+}
+
+------------------------------------------------------ */
+
+$sans:sans-serif;
+
+%sans--light {
+  font-family: $sans;
+  font-weight: 300;
+  font-style: normal;
+}
+
+%sans--regular {
+  font-family: $sans;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%sans--semi-bold {
+  font-family: $sans;
+  font-weight: 600;
+  font-style: normal;
+}
+
+%sans--bold {
+  font-family: $sans;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+/* @serif
+--------------------------------------------------------
+
+This is your basic serif font.
+
+Usage: use serif regular on a p
+p {
+@extend %serif--regular;
+}
+
+-------------------------------------------------------- */
+
+$serif: georgia, times;
+
+%serif--light {
+  font-family: $serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+%serif--regular {
+  font-family: $serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%serif--italic {
+  font-family: $serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+%serif--semi-bold {
+  font-family: $serif;
+  font-weight: 600;
+  font-style: italic;
+}
