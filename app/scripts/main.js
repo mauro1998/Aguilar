@@ -4,3 +4,11 @@
  * @author Mauro Aguilar Bustamante
  * @version 1.0.0
  */
+requirejs.config({
+  baseUrl: 'scripts',
+  paths: {
+    jquery: 'lib/jquery'
+  }
+});
+
+require(['index']);
