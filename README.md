@@ -7,8 +7,9 @@ The main idea of this project is to create a platform (an information system) th
 ### Project structure
 #### Backend: 
 * NodeJS (Express framework)
+* MongoDB
 
 #### Front-end:
 * Skyline (SCSS, OOCSS)
-* RequireJS (Module loader)
-* AngularJS
+* Require.js (Module loader)
+* Backbone.js
