@@ -13,3 +13,5 @@ The main idea of this project is to create a platform (an information system) th
 * Skyline (SCSS, OOCSS)
 * Require.js (Module loader)
 * Backbone.js
+* Jquery.js
+* Underscore.js
