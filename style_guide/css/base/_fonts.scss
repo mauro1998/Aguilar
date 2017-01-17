@@ -1,111 +1,55 @@
-@font-face {
-  font-family: 'Avenir LT Std 95 Black';
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700|Roboto:300,400,700');
+
+$roboto: 'Roboto';
+%roboto--light {
+  font-family: $roboto;
+  font-weight: 300;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 95 Black'), url('../fonts/AvenirLTStd-Black.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 45 Book';
+%roboto--regular {
+  font-family: $roboto;
+  font-weight: 400;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 45 Book'), url('../fonts/AvenirLTStd-Book.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 85 Heavy';
+%roboto--bold {
+  font-family: $roboto;
+  font-weight: 700;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 85 Heavy'), url('../fonts/AvenirLTStd-Heavy.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 35 Light';
+$roboto-slab: 'Roboto Slab';
+%roboto-slab--light {
+  font-family: $roboto-slab;
+  font-weight: 300;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 35 Light'), url('../fonts/AvenirLTStd-Light.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 65 Medium';
+%roboto-slab--regular {
+  font-family: $roboto-slab;
+  font-weight: 400;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 65 Medium'), url('../fonts/AvenirLTStd-Medium.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 55 Roman';
+%roboto-slab--bold {
+  font-family: $roboto-slab;
+  font-weight: 700;
   font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 55 Roman'), url('../fonts/AvenirLTStd-Roman.woff') format('woff');
 }
 
-@font-face {
-  font-family: 'Avenir LT Std 95 Black Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 95 Black Oblique'), url('../fonts/AvenirLTStd-BlackOblique.woff') format('woff');
-}
 
-@font-face {
-  font-family: 'Avenir LT Std 45 Book Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 45 Book Oblique'), url('../fonts/AvenirLTStd-BookOblique.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Avenir LT Std 85 Heavy Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 85 Heavy Oblique'), url('../fonts/AvenirLTStd-HeavyOblique.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Avenir LT Std 35 Light Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 35 Light Oblique'), url('../fonts/AvenirLTStd-LightOblique.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Avenir LT Std 65 Medium Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 65 Medium Oblique'), url('../fonts/AvenirLTStd-MediumOblique.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Avenir LT Std 55 Oblique';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Avenir LT Std 55 Oblique'), url('../fonts/AvenirLTStd-Oblique.woff') format('woff');
-}
-
-/* @avenir
+/* @roboto-slab
 --------------------------------------------------------
 
-Avenir font.
+This is your basic sans font.
 
-Usage:
+Usage: use sans regular on a p
 p {
-  @extend %avenir-light
+  @extend %roboto-slab--regular;
 }
 
------------------------------------------------------ */
-
-%avenir-black { font-family: 'Avenir LT Std 95 Black'; }
-%avenir-book { font-family: 'Avenir LT Std 45 Book'; }
-%avenir-heavy { font-family: 'Avenir LT Std 85 Heavy'; }
-%avenir-light { font-family: 'Avenir LT Std 35 Light'; }
-%avenir-medium { font-family: 'Avenir LT Std 65 Medium'; }
-%avenir-roman { font-family: 'Avenir LT Std 55 Roman'; }
-%avenir-black-o { font-family: 'Avenir LT Std 95 Black Oblique'; }
-%avenir-book-o { font-family: 'Avenir LT Std 45 Book Oblique'; }
-%avenir-heavy-o { font-family: 'Avenir LT Std 85 Heavy Oblique'; }
-%avenir-light-o { font-family: 'Avenir LT Std 35 Light Oblique'; }
-%avenir-medium-o { font-family: 'Avenir LT Std 65 Medium Oblique'; }
-%avenir-o { font-family: 'Avenir LT Std 55 Oblique'; }
+------------------------------------------------------ */
 
 /* @sans
 --------------------------------------------------------

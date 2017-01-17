@@ -1,14 +1,15 @@
 define([
   'backbone',
   'underscore',
+  'scripts/app',
   'text!templates/index.template.html'
-], function(Backbone, _, indexTemplate) {
+], function(Backbone, _, app, indexTemplate) {
   var IndexView = Backbone.View.extend({
     tagName   : 'div',
     className : 'index_container',
 
     initialize: function() {
-      _.bindAll.apply(_, _.functions(this));
+      _.bindAll.apply(_, [this].concat(_.functions(this)));
     },
 
     render: function() {

@@ -48,12 +48,11 @@
 input {
   -webkit-appearance: none;
   border-radius: 0;
-  @extend %avenir-light;
   width: 100%;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: .8em;
-  padding-top: .9em;
+  padding-left: .9em;
+  padding-right: .9em;
+  padding-bottom: .6em;
+  padding-top: .8em;
   border: 1px solid $border_color;
   color: $color__black;
   font-size: .9em;
@@ -183,7 +182,6 @@ textarea {
   min-height: 6em;
   padding: 1em;
   border: solid 1px $color__black;
-  @extend %avenir-light;
   font-size: .9em;
   resize: none;
   color: $color__black;
