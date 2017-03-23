@@ -1,0 +1,113 @@
+/**
+
+@site-header
+--------------------------------------------------------
+modules/_site-header.scss
+--------------------------------------------------------
+
+Site-wide header
+
+------------------------------------------------------ */
+
+.site-header {
+  @include clearfix();
+  padding: 1*$unit 0;
+  border-bottom: 1px solid $color__grey--light;
+
+  &.salmon {
+    background: $color__salmon;
+    color: $color__white;
+  }
+}
+
+
+
+
+
+/* @branding
+--------------------------------------------------------
+
+The logo & (optional) wordmark
+
+Example: Branding logo
+<a class="branding" href="/">
+<img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+<h1 class="branding__wordmark">My Company</h1>
+</a>
+
+------------------------------------------------------ */
+
+.branding {
+  position: relative;
+  text-align: center;
+}
+
+.branding__logo {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  @extend %fira-sans--regular;
+
+  > div {
+    position: relative;
+
+    &:first-child {
+      font-size: $unit*4;
+    }
+
+    &:last-child {
+      font-size: $unit*1.1;
+      top: -1.5625em;
+    }
+  }
+}
+
+.branding__wordmark {
+  font-size: 1.5*$unit;
+  white-space: nowrap;
+  line-height: 2*$unit;
+  margin: 0;
+}
+
+
+
+
+
+/*
+
+@site-nav
+--------------------------------------------------------
+
+The main site navigation.
+
+-----------------------------------------------------  */
+
+.site-nav {
+  position: relative;
+  text-align: center;
+
+  ul.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    @extend %fira-sans--regular;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        line-height: 1.5*$unit;
+        padding: 0 $unit;
+        margin-left: .5*$unit;
+        text-decoration: none;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+
+}

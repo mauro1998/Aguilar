@@ -1,0 +1,19 @@
+Navbar:
+
+Inicio:
+  Bienvenido
+  ¿Quienes somos?
+  ¿Qué hacemos?
+  Introducción al blog
+  Introducción a trabaje con nosotros
+  Introducción a datos de contacto
+Servicios:
+  Construcción de vivienda nueva
+  Remodelación del hogar
+  Cotizaciones y presupuestos
+  Asesoramiento online
+Blog
+Contáctenos
+Trabaje con nosotros
+Acceder / Ingresar
+Registrarse
