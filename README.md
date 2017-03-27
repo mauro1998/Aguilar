@@ -1,8 +1,8 @@
-# Aguilar Project
+# Aguilar Construcciones y Reformas de Vivienda
 ### Aguilar - Construcciones y reformas 
 A startup company and a personal project.
 
-The main idea of this project is to create a platform (an information system) that manages all the information and content of Aguilar Company.
+The main idea of this project is to create a platform (an information system) that manages all the information and content of the company.
 
 ### Project structure
 #### Backend: 
@@ -11,7 +11,4 @@ The main idea of this project is to create a platform (an information system) th
 
 #### Front-end:
 * Skyline (SCSS, OOCSS)
-* Require.js (Module loader)
-* Backbone.js
-* Jquery.js
-* Underscore.js
+* jQuery
