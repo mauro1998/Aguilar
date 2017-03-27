@@ -12,12 +12,8 @@ Site-wide header
 .site-header {
   @include clearfix();
   padding: 1*$unit 0;
-  border-bottom: 1px solid $color__grey--light;
-
-  &.salmon {
-    background: $color__salmon;
-    color: $color__white;
-  }
+  border-bottom: 1px solid $color__grey--soft-light;
+  background-color: $color__white;
 }
 
 

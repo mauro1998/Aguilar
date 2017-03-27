@@ -17,3 +17,29 @@ Contáctenos
 Trabaje con nosotros
 Acceder / Ingresar
 Registrarse
+
+
+Sistema de información
+
+Base de datos no relacional: MongoDB
+Tecnologías del servidor: Javascript / Nodejs / Express Framework
+
+Usuarios (Datos):
+  Tiene permisos de administración (Bool)
+  Nombre completo
+  Correo Electrónico (Envío de notificaciones por correo)
+  Nombre de usuario
+  Contraseña
+
+Paǵinas:
+  Identificador de página
+  Nombre de página
+
+Bloques de contenido:
+  Tipo de bloque
+  Atributos
+    Título (?)
+    Contenido
+    + Características de renderizado del bloque
+
+Implementar Google Analytics

@@ -16,11 +16,16 @@ this case, we call that .site.
 
 .site {
   position: relative;
+  padding-bottom: 8em;
+}
+
+.panel {
+  border: 1px solid $color__grey--soft-light;
+  background-color: $color__white;
 }
 
 .site-card {
   position: relative;
-  border: 1px solid $color__grey--soft-light;
 
   > div {
     border-bottom: 1px solid $color__grey--soft-light;
@@ -31,8 +36,8 @@ this case, we call that .site.
 
   .card-image {
     position: relative;
-    height: 190px;
-    background-color: $color__grey--soft-light;
+    height: 10.5em;
+    background-color: $color__ghost-white;
 
     .card-title {
       position: absolute;
@@ -42,7 +47,7 @@ this case, we call that .site.
       color: $color__black;
 
       h1, h2, h3, h4, h5, h6 {
-        @extend %open-sans--light;
+        @extend %fira-sans--light;
         margin: 0;
         padding: 0;
       }

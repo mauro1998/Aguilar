@@ -33,3 +33,19 @@
 .page__footer {
 
 }
+
+
+.not-found-page {
+  display: block;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    padding-bottom: 0;
+    margin-bottom: .5em;
+  }
+
+  p {
+    margin-bottom: .5em;
+  }
+}

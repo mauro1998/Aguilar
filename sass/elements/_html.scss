@@ -18,6 +18,10 @@ html {
   @include gradual-queries(20em, 80%, 80em, 100%, 10em);
 }
 
+html, body {
+  min-height: 100vh;
+}
+
 * {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;

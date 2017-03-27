@@ -1,5 +1,5 @@
 const express = require('express');
-const hbs = require('hbs');
+const hbs = require('express-handlebars');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
@@ -10,8 +10,10 @@ const users = require('./routes/users');
 const app = express();
 
 // view engine setup
-hbs.registerPartials(path.join(__dirname, 'templates/partials'));
-app.set('views', path.join(__dirname, 'templates'));
+const templatesDir = path.join(__dirname, 'templates');
+const layoutsDir = path.join(templatesDir, 'layouts');
+app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'base', layoutsDir }));
+app.set('views', templatesDir);
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
@@ -40,7 +42,7 @@ app.use((err, req, res, next) => {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('layout', { error: true });
+  res.render('error');
 });
 
 module.exports = app;

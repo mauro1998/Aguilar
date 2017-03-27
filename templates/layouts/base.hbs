@@ -11,6 +11,7 @@
   <meta name="og:description" content="Somos un grupo de personas independientes dedicadas a la construcción y reforma de viviendas en Medellín, Antioquia.">
   <title>Construcción y Reformas de Vivienda en Medellín, Antioquia</title>
   <link rel="stylesheet" href="/assets/styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body>
   <div class="site">
@@ -23,11 +24,13 @@
       </div>
       <nav class="site-nav container">
         <ul class="nav-list">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contáctenos</a></li>
-          <li><a href="#">Ingresar</a></li>
+          {{#each navlist}}
+            {{#if active}}
+              <li><a class="link" href="{{href}}">{{name}}</a></li>
+            {{else}}
+              <li><a href="{{href}}">{{name}}</a></li>
+            {{/if}}
+          {{/each}}
         </ul>
       </nav>
     </header>
@@ -35,20 +38,35 @@
     <div class="site-main container">
       <div class="page">
 
-        <div class="site-card block--ends">
-          <div class="card-image">
-            <div class="card-title"><h2>Bienvenido</h2></div>
-          </div>
-          <div class="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum voluptatem suscipit ab non, soluta inventore consectetur itaque dignissimos cupiditate quisquam. Est qui quidem reprehenderit ab fugiat tempora, earum alias accusamus!
-          </div>
-          <div class="card-footer">
-            <button class="btn btn-sm">Action</button>
-          </div>
-        </div>
+        {{{body}}}
 
       </div>
     </div>
   </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a class="site-link" href="/">
+        <div class="branding">
+          <div class="branding__logo">
+            <div>Aguilar</div>
+            <div>
+              <div>Construcciones y Reformas</div>
+              <div class="copyright"><i class="fa fa-copyright"></i> 2017</div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <ul class="list">
+        <li><a href="/services" class="link">Servicios</a></li>
+        <li><a href="/blog" class="link">Blog</a></li>
+        <li><a href="/contact" class="link">Contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="/vendor/jquery.js"></script>
+  <script type="text/javascript" src="/scripts/main.js"></script>
 </body>
 </html>

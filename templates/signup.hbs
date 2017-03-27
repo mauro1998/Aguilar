@@ -1,0 +1,69 @@
+<div id="signup-form" class="signup-form block--ends">
+  <form class="form panel" action="/auth/signup">
+    <fieldset class="personal-information-fields">
+      <div class="legend">
+        <span>Información personal</span>
+      </div>
+      <fieldset>
+        <article class="field">
+          <label class="field__label" for="signUpFirstName">Nombres</label>
+          <input class="field__input" id="signUpFirstName" type="text">
+          <span class="field__feedback"></span>
+          <span class="field__hint"></span>
+        </article>
+        <article class="field">
+          <label class="field__label" for="signUpLastName">Apellidos</label>
+          <input class="field__input" id="signUpLastName" type="text">
+          <span class="field__feedback"></span>
+          <span class="field__hint"></span>
+        </article>
+      </fieldset>
+      <article class="field">
+        <label class="field__label" for="signUpEmail">Correo Electrónico</label>
+        <input class="field__input" type="email" id="signUpEmail">
+        <span class="field__feedback"></span>
+        <span class="field__hint"></span>
+      </article>
+      <footer class="form__actions">
+        <article class="actions">
+          <button id="next" class="field__input btn btn--blue btn--block loading" type="button">Continuar</button>
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+        <span class="more-info">Ya tiene una cuenta? <a href="/signin" class="link">Inicie sesión</a>.</span>
+      </footer>
+    </fieldset>
+
+    <fieldset class="session-information-fields is-hidden">
+      <div class="legend">
+        <span>Información de inicio de sesión</span>
+      </div>
+      <article class="field">
+        <label class="field__label" for="signUpUsername">Nombre de Usuario <a class="ui-interaction link">?</a></label>
+        <input class="field__input" type="email" id="signUpUsername">
+        <span class="field__feedback"></span>
+        <span class="field__hint is-hidden">Recuerde que también puede usar su cuenta de correo electrónico para iniciar sesión</span>
+      </article>
+      <article class="field ">
+        <label class="field__label" for="signUpPassword">Contraseña</label>
+        <input class="field__input" type="password" id="signUpPassword">
+        <span class="field__feedback"></span>
+        <span class="field__hint"></span>
+      </article>
+      <article class="field ">
+        <label class="field__label" for="signUpPassword2">Confirmación de Contraseña <a class="ui-interaction link">?</a></label>
+        <input class="field__input" type="password" id="signUpPassword2">
+        <span class="field__feedback"></span>
+        <span class="field__hint is-hidden">Ingrese su contraseña nuevamente para asegurarse de que ha sido escrita correctamente</span>
+      </article>
+      <footer class="form__actions">
+        <article class="actions">
+          <input class="field__input btn btn--primary btn--block" type="submit" id="signUpSubmit" value="Registrarse">
+          <span  class="field__feedback"></span>
+          <span  class="field__hint"></span>
+        </article>
+        <span class="more-info">Ya tiene una cuenta? <a href="/signin" class="link">Inicie sesión</a>.</span>
+      </footer>
+    </fieldset>
+  </form>
+</div>

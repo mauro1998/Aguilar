@@ -1,24 +1,24 @@
 /**
 
-  @buttons
+@buttons
 --------------------------------------------------------
-  elements/_buttons.scss
+elements/_buttons.scss
 --------------------------------------------------------
 
-  Buttons are a common UI component in sites/apps.  They
-  are usually either anchor, button, or input elements
-  with a classname of 'btn'.  They provide an easily
-  identified clickable target.
+Buttons are a common UI component in sites/apps.  They
+are usually either anchor, button, or input elements
+with a classname of 'btn'.  They provide an easily
+identified clickable target.
 
-  Buttons commonly have modifying classes that apply
-  specific styles.  Examples of these are .btn--large and
-  .btn--inline
+Buttons commonly have modifying classes that apply
+specific styles.  Examples of these are .btn--large and
+.btn--inline
 
-  Example: Buttons using anchors
-  <p><a href="#" class="btn">Regular Button</a></p>
+Example: Buttons using anchors
+<p><a href="#" class="btn">Regular Button</a></p>
 
-  Example: Buttons using buttons
-  <p><button class="btn">Regular Button</button></p>
+Example: Buttons using buttons
+<p><button class="btn">Regular Button</button></p>
 
 ------------------------------------------------------ */
 
@@ -36,16 +36,22 @@ button {
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eff3f6;
+  background-image: -webkit-linear-gradient(270deg, #fafbfc 0%, #eff3f6 90%);
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+  color: $color__black;
   display: inline-block;
-  background: $color__black;
-  color: $color__white;
-  border: none;
+  border: 1px solid $color__grey--soft-light;
   @extend %sans--regular;
-  font-size: $unit;
+  font-size: 1em;
+  font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
-  letter-spacing: .225em;
+  letter-spacing: .05em;
   padding: 1em 1.25em;
+  border-radius: 3px;
+  cursor: pointer;
+
   &:hover,
   &:focus,
   &:active {
@@ -64,19 +70,47 @@ button {
   &.btn-md {
     font-size: $unit*0.9;
   }
+
+  &.loading {
+    span {
+      font-size: $unit;
+      animation-name: blink;
+      animation-duration: 1.4s;
+      animation-iteration-count: infinite;
+      animation-fill-mode: both;
+    }
+
+    span:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    span:nth-child(3) {
+      animation-delay: .4s;
+    }
+  }
 }
 
-
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .2;
+  }
+}
 
 
 
 /* @btn--secondary
 --------------------------------------------------------
 
-  A btn modifier, secondary
+A btn modifier, secondary
 
-  Example: .btn--secondary
-  <a class="btn btn--secondary">Secondary button</a>
+Example: .btn--secondary
+<a class="btn btn--secondary">Secondary button</a>
 
 ------------------------------------------------------ */
 
@@ -93,10 +127,10 @@ button {
 /* @btn--large
 --------------------------------------------------------
 
-  A btn modifier, large
+A btn modifier, large
 
-  Example: .btn--large
-  <a class="btn btn--large">Large button</a>
+Example: .btn--large
+<a class="btn btn--large">Large button</a>
 
 ------------------------------------------------------ */
 
@@ -114,13 +148,13 @@ button {
 /* @btn--inline
 --------------------------------------------------------
 
-  A btn modifier, if this button is in a paragraph or
-  in anything else that has a defined font-size, this
-  modifier will make the btn inherit the font-size of
-  the partent.
+A btn modifier, if this button is in a paragraph or
+in anything else that has a defined font-size, this
+modifier will make the btn inherit the font-size of
+the partent.
 
-  Example: .btn--inline
-  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
+Example: .btn--inline
+<p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
 
 ------------------------------------------------------ */
 
@@ -135,15 +169,15 @@ button {
 /* @btn--block
 --------------------------------------------------------
 
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
+A btn modifier - makes the button display block, 100%
+width and aligns the text to the center.  Removes left
+and right padding since the text is center aligned, it
+is not needed.  Actually sometimes having the padding
+on the left and right causes problems if the centered
+text is quite long - so we just remove it.
 
-  Example: .btn--block
-  <a href="#" class="btn btn--block">Block button</a>
+Example: .btn--block
+<a href="#" class="btn btn--block">Block button</a>
 
 ------------------------------------------------------ */
 
@@ -162,15 +196,15 @@ button {
 /* @btn--icon
 --------------------------------------------------------
 
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
+A btn modifier - makes the button display block, 100%
+width and aligns the text to the center.  Removes left
+and right padding since the text is center aligned, it
+is not needed.  Actually sometimes having the padding
+on the left and right causes problems if the centered
+text is quite long - so we just remove it.
 
-  Example: .btn--icon
-  <button class="btn--icon ss-icon">Block button</button>
+Example: .btn--icon
+<button class="btn--icon ss-icon">Block button</button>
 
 ------------------------------------------------------ */
 
@@ -179,4 +213,34 @@ button {
   border: none;
   padding: 0;
   font-size: 1em;
+}
+
+.btn--green, .btn--success, .btn--primary {
+  background-color: $color__green;
+  background-image: -webkit-linear-gradient(270deg, #2fcb53 0%, $color__green 90%);
+  background-image: linear-gradient(-180deg, #2fcb53 0%, $color__green 90%);
+  color: $color__offwhite;
+  border: none;
+}
+
+.btn--blue, .btn--info {
+  background-color: $color__blue;
+  background-image: -webkit-linear-gradient(270deg, #0679fc 0%, $color__blue 90%);
+  background-image: linear-gradient(-180deg, #0679fc 0%, $color__blue 90%);
+  color: $color__white;
+  border: none;
+}
+
+.btn--error {
+  background-color: $color__error;
+  color: $color__red;
+  border-color: $color__red;
+}
+
+.btn--orange, .btn--warning {
+  background-color: $color__orange;
+  background-image: -webkit-linear-gradient(270deg, #f77a25 0%, $color__orange 90%);
+  background-image: linear-gradient(-180deg, #f77a25 0%, $color__orange 90%);
+  color: $color__offwhite;
+  border: none;
 }

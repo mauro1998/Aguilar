@@ -1,11 +1,11 @@
 /**
 
-  @site-footer
+@site-footer
 --------------------------------------------------------
-  modules/_site-footer.scss
+modules/_site-footer.scss
 --------------------------------------------------------
 
-  The site's global footer
+The site's global footer
 
 ------------------------------------------------------ */
 
@@ -13,6 +13,70 @@
 .site-footer {
   padding: 1*$unit 0;
   border-top: 1px solid $color__grey--light;
+  background-color: $color__navy;
+  color: $color__white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+
+  a.site-link {
+    color: $color__white;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    .branding {
+      display: inline-block;
+      .branding__logo {
+        > div {
+          position: relative;
+
+          &:first-child {
+            font-size: 2em;
+            top: 0.3125em;
+          }
+
+          &:last-child {
+            font-size: .57em;
+            top: -0.3125em;
+            font-weight: lighter;
+
+            div.copyright {
+              text-align: left;
+              font-size: 1.5em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  ul.list {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+
+    li {
+      display: inline-block;
+      line-height: 5.5em;
+      margin-left: 1em;
+
+      a {
+        color: $color__white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 

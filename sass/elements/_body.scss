@@ -13,8 +13,9 @@
 
 
 body {
-  @extend %open-sans--regular;
+  @extend %fira-sans--regular;
   line-height: 1.5;
   color: $color__black;
-  background: $color__white;
+  background: $color__body-background;
+  position: relative;
 }

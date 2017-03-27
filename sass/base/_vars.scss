@@ -33,30 +33,30 @@
 
 
 // Colors
-//
 $color__black: #515554;
 $color__grey: #b0b3b3;
-$color__grey--soft-light: #dfdfdf;
+$color__body-background: #fafafa;
+$color__grey--soft-light: #cfd2d2; //#dfdfdf;
 $color__grey--light: #cfd2d2;
 $color__offwhite: #f4f4f4;
 $color__white: #fff;
 
-$color__green: #a2bb60;
+$color__green: #269f42;
 $color__salmon: #eb6d58;
 $color__sky-blue: #94c1c8;
-$color__blue: #0D699C;
+$color__blue: #0361cc;
 $color__purple: #c492bc;
 $color__navy: #151e23;
 $color__brown: #76400b;
+$color__red: #86181d;
+$color__orange: #c85607;
 
+$color__error: #ffdce0;
+$color__warning: #c85607;
+$color__info: #0361cc;
+$color__success: #269f42;
 
-$color__error: red;
-$color__warning: yellow;
-$color__info: blue;
-$color__success: green;
-
-
-
+$color__ghost-white: #f8f8ff;
 
 
 /* @breakpoints
