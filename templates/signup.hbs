@@ -7,26 +7,26 @@
       <fieldset>
         <article class="field">
           <label class="field__label" for="signUpFirstName">Nombres</label>
-          <input class="field__input" id="signUpFirstName" type="text">
+          <input class="field__input" id="signUpFirstName" name="firstName" type="text">
           <span class="field__feedback"></span>
           <span class="field__hint"></span>
         </article>
         <article class="field">
           <label class="field__label" for="signUpLastName">Apellidos</label>
-          <input class="field__input" id="signUpLastName" type="text">
+          <input class="field__input" id="signUpLastName" name="lastName" type="text">
           <span class="field__feedback"></span>
           <span class="field__hint"></span>
         </article>
       </fieldset>
       <article class="field">
         <label class="field__label" for="signUpEmail">Correo Electrónico</label>
-        <input class="field__input" type="email" id="signUpEmail">
+        <input class="field__input" type="text" id="signUpEmail" name="email">
         <span class="field__feedback"></span>
         <span class="field__hint"></span>
       </article>
       <footer class="form__actions">
         <article class="actions">
-          <button id="next" class="field__input btn btn--blue btn--block loading" type="button">Continuar</button>
+          <button id="nextFormPart" class="field__input btn btn--blue btn--block loading" type="button">Continuar</button>
           <span  class="field__feedback"></span>
           <span  class="field__hint"></span>
         </article>
@@ -40,25 +40,25 @@
       </div>
       <article class="field">
         <label class="field__label" for="signUpUsername">Nombre de Usuario <a class="ui-interaction link">?</a></label>
-        <input class="field__input" type="email" id="signUpUsername">
+        <input class="field__input" type="text" id="signUpUsername" name="username">
         <span class="field__feedback"></span>
         <span class="field__hint is-hidden">Recuerde que también puede usar su cuenta de correo electrónico para iniciar sesión</span>
       </article>
       <article class="field ">
         <label class="field__label" for="signUpPassword">Contraseña</label>
-        <input class="field__input" type="password" id="signUpPassword">
+        <input class="field__input" type="password" id="signUpPassword" name="password">
         <span class="field__feedback"></span>
         <span class="field__hint"></span>
       </article>
       <article class="field ">
         <label class="field__label" for="signUpPassword2">Confirmación de Contraseña <a class="ui-interaction link">?</a></label>
-        <input class="field__input" type="password" id="signUpPassword2">
+        <input class="field__input" type="password" id="signUpPassword2" name="password2">
         <span class="field__feedback"></span>
         <span class="field__hint is-hidden">Ingrese su contraseña nuevamente para asegurarse de que ha sido escrita correctamente</span>
       </article>
       <footer class="form__actions">
         <article class="actions">
-          <input class="field__input btn btn--primary btn--block" type="submit" id="signUpSubmit" value="Registrarse">
+          <input class="btn btn--primary btn--block" type="submit" id="signUpSubmit" value="Registrarse">
           <span  class="field__feedback"></span>
           <span  class="field__hint"></span>
         </article>

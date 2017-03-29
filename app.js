@@ -8,9 +8,9 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 const csurf = require('csurf');
+const app = express();
 const index = require('./routes/index');
 const auth = require('./routes/auth');
-const app = express();
 const config = {
     cookieSecret: 'Aguilar',
     sessionSecret: 'Construcciones&Reformas'
@@ -18,7 +18,6 @@ const config = {
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1:27017/db_aguilar');
-const User = require('./services/user.model');
 
 // View engine setup
 const templatesDir = path.join(__dirname, 'templates');
@@ -36,6 +35,17 @@ app.use(cookieParser(config.cookieSecret));
 app.use(cookieSession({ secret: config.sessionSecret }));
 app.use(csurf({ cookie: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Check for active session:
+app.use((req, res, next) => {
+    console.log('We are checking for active session');
+    if (!req.signedCookies.user_id) {
+        console.log('User is not logged in');
+    } else {
+        console.log('User is logged in');
+    }
+    next();
+});
 
 // Routes
 app.use('/', index);
