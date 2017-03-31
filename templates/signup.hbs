@@ -1,5 +1,5 @@
-<div id="signup-form" class="signup-form block--ends">
-  <form class="form panel" action="/auth/signup">
+<div class="signup-form block--ends">
+  <form id="signup-form" class="form panel" action="/auth/signup" autocomplete="off">
     <fieldset class="personal-information-fields">
       <div class="legend">
         <span>Información personal</span>
@@ -7,26 +7,26 @@
       <fieldset>
         <article class="field">
           <label class="field__label" for="signUpFirstName">Nombres</label>
-          <input class="field__input" id="signUpFirstName" name="firstName" type="text">
+          <input class="field__input first" id="signUpFirstName" name="firstName" type="text">
           <span class="field__feedback"></span>
           <span class="field__hint"></span>
         </article>
         <article class="field">
           <label class="field__label" for="signUpLastName">Apellidos</label>
-          <input class="field__input" id="signUpLastName" name="lastName" type="text">
+          <input class="field__input first" id="signUpLastName" name="lastName" type="text">
           <span class="field__feedback"></span>
           <span class="field__hint"></span>
         </article>
       </fieldset>
       <article class="field">
         <label class="field__label" for="signUpEmail">Correo Electrónico</label>
-        <input class="field__input" type="text" id="signUpEmail" name="email">
+        <input class="field__input first" type="email" id="signUpEmail" name="email" placeholder="correo@ejemplo.com">
         <span class="field__feedback"></span>
         <span class="field__hint"></span>
       </article>
       <footer class="form__actions">
         <article class="actions">
-          <button id="nextFormPart" class="field__input btn btn--blue btn--block loading" type="button">Continuar</button>
+          <button id="nextFormPart" class="btn btn--blue btn--block loading" type="submit">Continuar</button>
           <span  class="field__feedback"></span>
           <span  class="field__hint"></span>
         </article>
