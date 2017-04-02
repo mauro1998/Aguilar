@@ -33,6 +33,7 @@ a {
 a.link {
     color: $color__info;
     text-decoration: none;
+    cursor: pointer;
     &:hover,
     &:focus {
         opacity: 1;
@@ -42,7 +43,10 @@ a.link {
 
 a.ui-interaction {
     cursor: pointer;
-    float: right;
+
+    &.hint {
+        float: right;
+    }
 }
 
 

@@ -27,8 +27,13 @@ gulp.task('copy-vendor', () => gulp.src([
   ]).pipe(gulp.dest(vendor))
 );
 
-gulp.task('make-js', () => gulp.src('src/*.js')
-    .pipe(concat('app.js'))
+gulp.task('make-js', () => gulp.src([
+        'src/main.js',
+        'src/auth.js',
+        'src/encryption.js',
+        'src/ui.js',
+        'src/forms.js'
+    ]).pipe(concat('app.js'))
     .pipe(gulp.dest('public/scripts'))
 );
 

@@ -46,36 +46,36 @@ Example: Text Input
 
 // Input elements
 input {
-  -webkit-appearance: none;
-  border-radius: 3px;
-  @extend %serif--light;
-  width: 100%;
-  padding: 1em;
-  border: 1px solid $color__grey--soft-light;
-  color: $color__black;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    @extend %serif--light;
+    width: 100%;
+    padding: 1em;
+    border: 1px solid $color__grey--soft-light;
+    color: $color__black;
 
-  &:focus {
-    outline: none;
-  }
-  // Size modifiers
-  &.input--s {
-    font-size: .5rem;
-  }
+    &:focus {
+        outline: none;
+    }
+    // Size modifiers
+    &.input--s {
+        font-size: .5rem;
+    }
 
-  &.input--l {
-    font-size: 1.5rem;
-  }
+    &.input--l {
+        font-size: 1.5rem;
+    }
 }
 
 input[type=text], input[type=email], input[type=password] {
-  background: $color__body-background;
+    background: $color__body-background;
 
-  &:focus {
-    outline-color: $color__grey--light;
-    outline-width: 1px;
-    outline-style: double;
-    background: $color__white;
-  }
+    &:focus {
+        outline-color: $color__grey--light;
+        outline-width: 1px;
+        outline-style: double;
+        background: $color__white;
+    }
 }
 
 // Define the input placeholder color to be reused in the
@@ -84,35 +84,35 @@ $input-placeholder: $color__black;
 
 // Placeholders
 input {
-  &::-webkit-input-placeholder {
-    color: $input-placeholder;
-    @extend %serif--light;
-  }
-  &:-moz-placeholder {
-    color: $input-placeholder;
-    @extend %serif--light;
-  }
-  &::-moz-placeholder {
-    color: $input-placeholder;
-  }
-  &:-ms-input-placeholder {
-    color: $input-placeholder;
-  }
+    &::-webkit-input-placeholder {
+        color: $input-placeholder;
+        @extend %serif--light;
+    }
+    &:-moz-placeholder {
+        color: $input-placeholder;
+        @extend %serif--light;
+    }
+    &::-moz-placeholder {
+        color: $input-placeholder;
+    }
+    &:-ms-input-placeholder {
+        color: $input-placeholder;
+    }
 }
 // Placeholders on focus
 input:focus {
-  &::-webkit-input-placeholder {
-    opacity: .3;
-  }
-  &:-moz-placeholder {
-    opacity: .3;
-  }
-  &::-moz-placeholder {
-    opacity: .3;
-  }
-  &:-ms-input-placeholder {
-    opacity: .3;
-  }
+    &::-webkit-input-placeholder {
+        opacity: .3;
+    }
+    &:-moz-placeholder {
+        opacity: .3;
+    }
+    &::-moz-placeholder {
+        opacity: .3;
+    }
+    &:-ms-input-placeholder {
+        opacity: .3;
+    }
 }
 
 
@@ -152,14 +152,14 @@ Example: Large select
 ------------------------------------------------------ */
 
 select {
-  width: 100%;
-  font-size: 1rem;
-  &.select--sm {
-    font-size: .5rem;
-  }
-  &.select--lg {
-    font-size: 1.5rem;
-  }
+    width: 100%;
+    font-size: 1rem;
+    &.select--sm {
+        font-size: .5rem;
+    }
+    &.select--lg {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -186,20 +186,20 @@ Example: Large Textarea
 ------------------------------------------------------ */
 
 textarea {
-  width: 100%;
-  min-height: 6em;
-  padding: 1em;
-  border: solid 1px $color__grey--soft-light;
-  @extend %serif--light;
-  &:focus {
-    outline: none;
-  }
-  &.textarea--s {
-    font-size: .5rem;
-  }
-  &.textarea--l {
-    font-size: 1.5rem;
-  }
+    width: 100%;
+    min-height: 6em;
+    padding: 1em;
+    border: solid 1px $color__grey--soft-light;
+    @extend %serif--light;
+    &:focus {
+        outline: none;
+    }
+    &.textarea--s {
+        font-size: .5rem;
+    }
+    &.textarea--l {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -222,29 +222,29 @@ Example: Radio with super-long label
 ------------------------------------------------------ */
 
 input[type=radio] {
-  -webkit-appearance: none;
-  width: 1em;
-  height: 1em;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid $color__grey--soft-light;
-  background: transparent;
-  &:checked {
-    background: #222;
-  }
+    -webkit-appearance: none;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid $color__grey--soft-light;
+    background: transparent;
+    &:checked {
+        background: #222;
+    }
 }
 
 
 .label--radio {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding-left: 1em;
-  input {
-    position: absolute;
-    top: .7em;
-    left: 0;
-  }
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 1em;
+    input {
+        position: absolute;
+        top: .7em;
+        left: 0;
+    }
 }
 
 
@@ -267,42 +267,42 @@ Example: Checkbox with super-long label
 ------------------------------------------------------ */
 
 input[type=checkbox] {
-  -webkit-appearance:none;
-  width: 1em;
-  height: 1em;
-  padding: 0;
-  border: 1px solid $color__grey--soft-light;
-  background: transparent;
-  cursor: pointer;
-  &:checked {
-    background: $color__grey;
-    border: none;
-  }
+    -webkit-appearance:none;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    border: 1px solid $color__grey--soft-light;
+    background: transparent;
+    cursor: pointer;
+    &:checked {
+        background: $color__grey;
+        border: none;
+    }
 }
 
 .label--checkbox {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding-left: 1.1em;
-  font-weight: normal;
-  input {
-    position: absolute;
-    top: .3em;
-    left: 0;
-  }
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 1.1em;
+    font-weight: normal;
+    input {
+        position: absolute;
+        top: .3em;
+        left: 0;
+    }
 
-  &.success input[type=checkbox]:checked {
-    background-color: $color__green;
-    background-image: -webkit-linear-gradient(270deg, #2fcb53 0%, $color__green 90%);
-    background-image: linear-gradient(-180deg, #2fcb53 0%, $color__green 90%);
-  }
+    &.success input[type=checkbox]:checked {
+        background-color: $color__green;
+        background-image: -webkit-linear-gradient(270deg, #2fcb53 0%, $color__green 90%);
+        background-image: linear-gradient(-180deg, #2fcb53 0%, $color__green 90%);
+    }
 
-  &.info input[type=checkbox]:checked {
-    background-color: $color__blue;
-    background-image: -webkit-linear-gradient(270deg, #0679fc 0%, $color__blue 90%);
-    background-image: linear-gradient(-180deg, #0679fc 0%, $color__blue 90%);
-  }
+    &.info input[type=checkbox]:checked {
+        background-color: $color__blue;
+        background-image: -webkit-linear-gradient(270deg, #0679fc 0%, $color__blue 90%);
+        background-image: linear-gradient(-180deg, #0679fc 0%, $color__blue 90%);
+    }
 }
 
 
@@ -320,7 +320,7 @@ Example: Textarea
 ------------------------------------------------------ */
 
 textarea {
-  width: 100%;
+    width: 100%;
 }
 
 
@@ -338,8 +338,8 @@ Example: label
 ------------------------------------------------------ */
 
 label {
-  font-size: 1em;
-  font-weight: bold;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 
@@ -359,8 +359,8 @@ laid out further below.
 ------------------------------------------------------ */
 
 .form {
-  display: block;
-  padding: 2em;
+    display: block;
+    padding: 2em;
 }
 
 
@@ -382,9 +382,9 @@ our customers.</p>
 -------------------------------------------------------- */
 
 .form__header {
-  padding-bottom: 1em;
-  margin-bottom: 2em;
-  border-bottom: 1px solid #888;
+    padding-bottom: 1em;
+    margin-bottom: 2em;
+    border-bottom: 1px solid #888;
 }
 
 
@@ -450,7 +450,7 @@ Example: Nested Fieldsets
 -------------------------------------------------------- */
 
 fieldset {
-  border: none;
+    border: none;
 }
 
 
@@ -508,42 +508,42 @@ Example: Field for a textarea input
 -------------------------------------------------------- */
 
 .field {
-  position: relative;
-  margin-bottom: 2em;
+    position: relative;
+    margin-bottom: 2em;
 }
 
 // Field label
 .field__label {
-  display: block;
-  font-weight: 500;
+    display: block;
+    font-weight: 500;
 }
 
 // Field hint
 .field__hint {
-  color: #888;
-  font-size: .75em;
-  padding: .25em 0;
-  font-style: italic;
+    color: #888;
+    font-size: .75em;
+    padding: .25em 0;
+    font-style: italic;
 }
 
 // Field feedback
-.field__feedback {
-  display: none; // hidden by default, shown if inside .is-error
-  font-size: .75em;
-  padding: .25em .75em;
-  background: rgba(218, 35, 0, 0.3);
-  color: white;
+label.field__feedback {
+    font-size: .75em;
+    padding: .25em .75em;
+    background: rgba(218, 35, 0, 0.6);
+    color: white;
+    margin-top: .5em;
 }
 
 // Field error states
 .field.is-error {
 
-  .field__feedback {
-    display: block;
-  }
-  input {
-    border: 1px solid $color__grey--soft-light;
-  }
+    .field__feedback {
+        display: block;
+    }
+    input {
+        border: 1px solid $color__grey--soft-light;
+    }
 
 }
 
@@ -596,26 +596,26 @@ Example: Field with input group list modifier
 ------------------------------------------------------ */
 
 .field__input-group {
-  display: block;
-  > * {
-    display: inline-block;
-    margin-right: .5em;
-    &:last-child {
-      margin-right: 0;
+    display: block;
+    > * {
+        display: inline-block;
+        margin-right: .5em;
+        &:last-child {
+            margin-right: 0;
+        }
     }
-  }
 }
 
 // List mod
 .field__input-group--list {
-  display: block;
-  > * {
     display: block;
-    margin: .5em 0;
-    &:last-child {
-      margin-bottom: 0;
+    > * {
+        display: block;
+        margin: .5em 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
-  }
 }
 
 
@@ -643,47 +643,52 @@ Example: Form Actions Footer
 --------------------------------------------------------- */
 
 .form__actions {
-  border-top: 1px solid $color__grey--soft-light;
+    border-top: 1px solid $color__grey--soft-light;
 
-  input[type=submit], button {
-    margin-top: $unit;
-    font-size: .9em;
-    letter-spacing: .2em;
-  }
+    input[type=submit], button {
+        margin-top: $unit;
+        font-size: .9em;
+        letter-spacing: .2em;
+    }
 
-  article.actions {
-    margin-bottom: .5em;
-  }
+    article.actions {
+        margin-bottom: .5em;
+    }
 
-  span.more-info {
-    text-align: right;
-    font-size: .9em;
-    display: block;
-  }
+    span.more-info {
+        text-align: right;
+        font-size: .9em;
+        display: block;
+    }
 }
 
 
 .login-form, .signup-form {
-  width: 20em;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 3px;
+    width: 20em;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
 
-  .show-password {
-    text-align: right;
-    margin-top: .5em;
-  }
+    .back {
+        text-align: right;
+        font-size: .9em;
+    }
+
+    .show-password {
+        text-align: right;
+        margin-top: .5em;
+    }
 }
 
 .legend {
-  display: block;
-  border-bottom: 1px solid $color__grey--soft-light;
-  margin-bottom: 1em;
-  text-align: center;
-  padding-bottom: 1em;
-
-  span {
     display: block;
-    font-weight: lighter;
-  }
+    border-bottom: 1px solid $color__grey--soft-light;
+    margin-bottom: 1em;
+    text-align: center;
+    padding-bottom: 1em;
+
+    span {
+        display: block;
+        font-weight: lighter;
+    }
 }

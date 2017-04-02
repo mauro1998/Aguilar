@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
 const UserModel = require('../services/user.model');
+const Tea = require('../services/encryption');
 const _ = require('lodash');
 
 // Validate user credentials
@@ -14,24 +15,48 @@ router.post('/signup', (req, res, next) => {
     const loggedIn = req.signedCookies.auth_token !== undefined;
     if (loggedIn) return res.redirect('/');
     const keys = ['firstName', 'lastName', 'email', 'username', 'password'];
-    const data = _.pickBy(_.pick(req.body, keys), _.isString);
-    console.log('\n', req.body, data);
-    if (_.keys(data).length < keys.length) return res.json({ error: 'Invalid data' });
+    const body = _.pickBy(_.pick(req.body, keys), _.isString);
+    if (_.keys(body).length < keys.length) return res.json({ error: 'Invalid data' });
+    const data = {};
 
-    bcrypt.genSalt((err, salt) => {
-        if (err) res.status(500).end('Server Internal Error');
-        bcrypt.hash(data.password, salt, (err, hash) => {
-            if (err) res.status(500).end('Server Internal Error');
-            data.password = hash;
-            bcrypt.genSalt((err, authToken) => {
-                if (err) res.status(500).end('Server Internal Error');
-                data.token = authToken;
-                console.log(JSON.stringify(data, null, 2));
-                const user = new UserModel(data);
-                console.log(JSON.stringify(user, null, 2));
-                res.status(200).end('Good!');
+    for (const name in body) {
+        if (body.hasOwnProperty(name)) {
+            data[name] = Tea.decrypt(body[name], name);
+        }
+    }
+
+    UserModel.find({
+        $or: [
+            { username: data.username },
+            { email: data.email }
+        ]
+    }, (err, users) => {
+        if (err) return res.status(500).end('Server Internal Error');
+        if (!users.length) {
+            bcrypt.genSalt((err, salt) => {
+                if (err) return res.status(500).end('Server Internal Error');
+                bcrypt.hash(data.password, salt, (err, hash) => {
+                    if (err) return res.status(500).end('Server Internal Error');
+                    data.password = hash;
+                    bcrypt.genSalt((err, authToken) => {
+                        if (err) return res.status(500).end('Server Internal Error');
+                        data.token = authToken;
+                        const user = new UserModel(data);
+                        user.save((err, u) => {
+                            if (err) return res.status(500).end('Server Internal Error');
+                            res.status(200).json({ success: true });
+                        });
+                    });
+                });
             });
-        });
+        } else {
+            const error = [];
+            if (users.some((user) => user.username === data.username))
+            error.push(`Ya hay una persona registrada con el nombre de usuario "${data.username}"`);
+            if (users.some((user) => user.email === data.email))
+            error.push(`Ya hay una persona registrada con el correo electrónico "${data.email}"`);
+            return res.json({ error });
+        }
     });
 });
 
