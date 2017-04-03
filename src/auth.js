@@ -1,4 +1,6 @@
 (function() {
+    app.util.defaultErrorMessage = 'Ha sucedido un error inesperado al momento' +
+        ' de realizar la operación. Por favor intentelo nuevamente más tarde.';
     app.util.auth = (function() {
         $.ajaxSetup({ cache: false });
         var api = '/auth';
@@ -15,16 +17,42 @@
             });
         };
 
-        var signIn = function(data) {
-            var response = post('/signin', data).then(function(res) {
-                console.log(res);
+        var signIn = function(data, done) {
+            post('/signin', data).then(function(res) {
+                done(null, res);
             }).catch(function(err) {
-                if (err) throw err;
+                if (err) done(err);
             });
         };
 
         var signUp = function(data, done) {
-            var response = post('/signup', data).then(function(res) {
+            post('/signup', data).then(function(res) {
+                done(null, res);
+            }).catch(function(err) {
+                if (err) done(err);
+            });
+        };
+
+        var validateEmail = function(email, done) {
+            var data = { email: email };
+            post('/email', data).then(function(res) {
+                done(null, res);
+            }).catch(function(err) {
+                if (err) done(err);
+            });
+        };
+
+        var validateUsername = function(username, done) {
+            var data = { username: username };
+            post('/username', data).then(function(res) {
+                done(null, res);
+            }).catch(function(err) {
+                if (err) done(err);
+            });
+        };
+
+        var logOut = function(data, done) {
+            post('/logout', data).then(function(res) {
                 done(null, res);
             }).catch(function(err) {
                 if (err) done(err);
@@ -33,7 +61,9 @@
 
         return {
             signIn: signIn,
-            signUp: signUp
+            signUp: signUp,
+            requestEmailValidation: validateEmail,
+            requestUsernameValidation: validateUsername
         };
     })();
 })();

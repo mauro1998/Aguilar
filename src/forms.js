@@ -16,6 +16,53 @@
         var form = $('#signin-form');
         var init = function() {
             if (!form.length) return;
+            validator = form.validate({
+                errorClass: 'field__feedback',
+
+                rules: {
+                    username: 'required',
+                    password: 'required'
+                },
+
+                messages: {
+                    username: 'Por favor ingrese su nombre de usuario',
+                    password: 'Por favor ingrese su contraseña'
+                },
+
+                showErrors: function(errorMap, errorList) {
+                    this.defaultShowErrors();
+                    $.each(errorList, function (i, error) {
+                        $(error.element).siblings('label.field__feedback')
+                            .css("display", "block");
+                    });
+                },
+
+                submitHandler: function(form, e) {
+                    e.preventDefault();
+                    var data = {};
+                    $(form).find('.field__input').each(function(i, input) {
+                        var name = $(input).attr('name');
+                        var value = $(input).val();
+                        data[name] = app.util.Tea.encrypt(value, name);
+                    });
+
+                    app.util.auth.signIn(data, function(err, res) {
+                        if (err) {
+                            app.ui.createAlert(app.util.defaultErrorMessage, 'error')
+                                .prependTo('div.page');
+                            return console.error(err);
+                        }
+
+                        if (res.loggedIn) {
+                            window.location.replace(window.location.origin);
+                        } else {
+                            app.ui.createAlert(res.error, 'error')
+                                .prependTo('div.page');
+                            $('#signInPassword').val('').focus();
+                        }
+                    });
+                }
+            });
         };
 
         return { startListening: init };
@@ -42,34 +89,86 @@
         };
 
         var displayNext = function() {
+            processing = true;
             var _this = $(this);
             var dots = '<span>.</span><span>.</span><span>.</span>';
             _this.html(dots).addClass('loading');
-            setTimeout(showUserInfo.bind(_this), 1000);
+            var fields = [
+                validator.element('#signUpFirstName'),
+                validator.element('#signUpLastName'),
+                validator.element('#signUpEmail')
+            ];
+
+            firstPartIsValid = fields.every(function(fieldIsValid) { return fieldIsValid; });
+
+            if (firstPartIsValid) {
+                var before = (new Date()).getTime();
+                var emailInput = $('#signUpEmail');
+                var email = emailInput.val();
+                app.util.auth.requestEmailValidation(email, function(err, res) {
+                    if (err) {
+                        app.ui.createAlert(app.util.defaultErrorMessage, 'error')
+                            .prependTo('div.page');
+                        processing = false;
+                        _this.html('Continuar').removeClass('loading');
+                        return console.error(err);
+                    }
+                    var now = (new Date()).getTime();
+                    var time = now - before;
+                    var wait = time >= 1000 ? 0 : 1000 - time;
+
+                    if (res.valid) {
+                        setTimeout(showUserInfo.bind(_this), wait);
+                    } else {
+                        var msg = 'Alguien más ha registrado una cuenta con este correo electrónico';
+                        var label = $('<label>').addClass('field__feedback').text(msg);
+                        setTimeout(function() {
+                            label.appendTo(emailInput.parent()).css('display', 'block');
+                            _this.html('Continuar').removeClass('loading');
+                            firstPartIsValid = false;
+                            processing = false;
+                            setTimeout(function() {
+                                label.remove();
+                                label = null;
+                            }, 8000);
+                        }, wait);
+                    }
+                });
+            }
+        }
+
+        var validateUsername = function() {
+            var _this = $(this);
+            var username = _this.val().trim();
+            if (validator.element('#signUpUsername')) {
+                app.util.auth.requestUsernameValidation(username, function(err, res) {
+                    if (err) {
+                        app.ui.createAlert(app.util.defaultErrorMessage, 'error')
+                            .prependTo('div.page');
+                        return console.error(err);
+                    }
+                    if (!res.valid) {
+                        var msg = 'Alguien más ha registrado una cuenta con este nombre de usuario';
+                        var label = $('<label>').addClass('field__feedback').text(msg);
+                        label.appendTo(_this.parent()).css('display', 'block');
+                        setTimeout(function() {
+                            label.remove();
+                            label = null;
+                        }, 8000);
+                    }
+                });
+            }
         };
 
         var init = function() {
             if (!form.length) return;
             $('.back').on('click', 'a.ui-interaction.link', showPersonalInfo);
+            $('#signUpUsername').blur(validateUsername);
             validator = form.validate({
                 submitHandler: function(form, e) {
                     e.preventDefault();
                     if (processing) return;
-                    if (!firstPartIsValid) {
-                        processing = true;
-                        var fields = [
-                            validator.element('#signUpFirstName'),
-                            validator.element('#signUpLastName'),
-                            validator.element('#signUpEmail')
-                        ];
-
-                        firstPartIsValid = fields.every(function(fieldIsValid) {
-                            return fieldIsValid;
-                        });
-
-                        if (firstPartIsValid) return displayNext.call($('#nextFormPart'));
-                    }
-
+                    if (!firstPartIsValid) return displayNext.call($('#nextFormPart'));
                     var data = {};
 
                     $(form).find('.field__input').each(function(i, input) {
@@ -79,7 +178,11 @@
                     });
 
                     app.util.auth.signUp(data, function(err, res) {
-                        if (err) return console.log(err);
+                        if (err) {
+                            app.ui.createAlert(app.util.defaultErrorMessage, 'error')
+                                .prependTo('div.page');
+                            return console.error(err);
+                        }
                         if (res.success) {
                             $(form).find('.field__input').each(function(i, input) {
                                 $(input).val('');

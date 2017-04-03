@@ -1,29 +1,25 @@
 <div class="login-form block--ends">
-    <form class="form panel" action="/api/signin">
+    <form id="signin-form" class="form panel" action="/auth/signin" method="post">
         <fieldset>
             <article class="field">
-                <label class="field__label" for="signInUsername">Nombre de Usuario <a class="link ui-interaction">?</a></label>
-                <input class="field__input=" type="text" id="signInUsername">
-                <span class="field__feedback"></span>
+                <label class="field__label" for="signInUsername">Nombre de Usuario <a class="link ui-interaction hint">?</a></label>
+                <input class="field__input" type="text" id="signInUsername" name="username">
                 <span class="field__hint is-hidden">Ingrese con su nombre de usuario o su cuenta de correo electrónico</span>
             </article>
             <article class="field">
                 <label class="field__label" for="signInPassword">Contraseña</label>
-                <input class="field__input" type="password" id="signInPassword">
+                <input class="field__input" type="password" id="signInPassword" name="password">
                 <div class="show-password">
                     <label class="label--checkbox success" for="showPassword">
                         <input id="showPassword" type="checkbox" value="yes"> Mostrar contraseña
                     </label>
                 </div>
-                <span class="field__feedback"></span>
                 <span class="field__hint"></span>
             </article>
         </fieldset>
         <footer class="form__actions">
             <article class="actions">
-                <input class="field__input btn btn--primary btn--block" type="submit" id="signInSubmit" value="Ingresar">
-                <span  class="field__feedback"></span>
-                <span  class="field__hint"></span>
+                <input class="btn btn--primary btn--block" type="submit" id="signInSubmit" value="Ingresar">
             </article>
             <span class="more-info">No tiene una cuenta? <a href="/signup" class="link">Regístrese</a>.</span>
         </footer>
