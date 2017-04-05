@@ -1,21 +1,24 @@
 /**
 
-  @body
+@body
 --------------------------------------------------------
-  elements/_body.scss
+elements/_body.scss
 --------------------------------------------------------
 
-  Body should contain the document's default font and
-  background color for the content, if that background
-  color is different than the html.
+Body should contain the document's default font and
+background color for the content, if that background
+color is different than the html.
 
 ------------------------------------------------------ */
 
 
 body {
-  @extend %fira-sans--regular;
-  line-height: 1.5;
-  color: $color__black;
-  background: $color__body-background;
-  position: relative;
+    @extend %fira-sans--regular;
+    line-height: 1.5;
+    color: $color__black;
+    background: $color__white;
+    position: relative;
+    background-image: url(/assets/images/footer.png);
+    background-repeat: no-repeat;
+    background-position-y: bottom;
 }
