@@ -30,3 +30,5 @@ Run the following commands:
 - `cd aguilar-construcciones-reformas`
 - `npm install`
 - `node bin/www`
+
+At this point, if everything went well you should be able to see the web application by opening `localhost:3000` in your browser.
